@@ -15,5 +15,11 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
+vim.o.guifont = "MesloLGS Nerd Font Mono:h16"
+vim.g.neovide_refresh_rate = 100
+vim.g.neovide_confirm_quit = true
+vim.g.neovide_cursor_short_animation_length = 0.04
+vim.g.neovide_cursor_animation_length = 0.08
+
 require "lazy_setup"
 require "polish"
