@@ -57,6 +57,8 @@ return {
     -- NOTE: keycodes follow the casing in the vimdocs. For example, `<Leader>` must be capitalized
     mappings = {
       -- first key is the mode
+      t = {["<C-t>"] = { "<Cmd>ToggleTerm direction=float<CR>", desc = "Toggle terminal" }}, -- requires terminal that supports binding <C-'>
+      i = {["<C-t>"] = { "<Esc><Cmd>ToggleTerm direction=float<CR>", desc = "Toggle terminal" }},-- requires terminal that supports binding <C-'>
       n = {
         -- second key is the lefthand side of the map
 
@@ -66,6 +68,7 @@ return {
         ["L"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["H"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
         ["Q"] = { function() require("astrocore.buffer").close() end, desc = "Close current buffer" },
+        ["<C-t>"] = { '<Cmd>execute v:count . "ToggleTerm direction=float"<CR>', desc = "Toggle terminal" }, -- requires terminal that supports binding <C-'>
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
