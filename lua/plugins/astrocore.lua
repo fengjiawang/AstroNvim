@@ -59,16 +59,24 @@ return {
       -- first key is the mode
       t = {["<C-t>"] = { "<Cmd>ToggleTerm direction=float<CR>", desc = "Toggle terminal" }}, -- requires terminal that supports binding <C-'>
       i = {["<C-t>"] = { "<Esc><Cmd>ToggleTerm direction=float<CR>", desc = "Toggle terminal" }},-- requires terminal that supports binding <C-'>
+      x = {
+        -- flash-nvim mappings
+        ["s"] = false, -- Restore "s" to default
+        ["<Leader>s"] = { function() require("flash").jump() end, desc = "Flash", },
+      },
       n = {
         -- second key is the lefthand side of the map
 
         -- navigate buffer tabs
-        ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
-        ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
         ["L"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["H"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
         ["Q"] = { function() require("astrocore.buffer").close() end, desc = "Close current buffer" },
         ["<C-t>"] = { '<Cmd>execute v:count . "ToggleTerm direction=float"<CR>', desc = "Toggle terminal" }, -- requires terminal that supports binding <C-'>
+
+        -- flash-nvim mappings
+        ["s"] = false, -- Restore "s" to default
+        ["<Leader>s"] = { function() require("flash").jump() end, desc = "Flash", },
+        ["S"] = { function() require("flash").treesitter() end, desc = "Flash Treesitter", },
 
         -- mappings seen under group name "Buffer"
         ["<Leader>bd"] = {
