@@ -11,19 +11,18 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "astrodark",
+    colorscheme = "astrotheme",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
-        -- Normal = { bg = "#000000" },
         -- set the transparency for all of these highlight groups
-        Normal = { bg = "NONE", ctermbg = "NONE" },
-        NormalNC = { bg = "NONE", ctermbg = "NONE" },
-        LineNr = {},
-        SignColumn = {},
-        StatusLine = {},
-        NeoTreeNormal = { bg = "NONE", ctermbg = "NONE" },
-        NeoTreeNormalNC = { bg = "NONE", ctermbg = "NONE" },
+        -- Normal = { bg = "NONE", ctermbg = "NONE" },
+        -- NormalNC = { bg = "NONE", ctermbg = "NONE" },
+        -- LineNr = {},
+        -- SignColumn = {},
+        -- StatusLine = {},
+        -- NeoTreeNormal = { bg = "NONE", ctermbg = "NONE" },
+        -- NeoTreeNormalNC = { bg = "NONE", ctermbg = "NONE" },
       },
       astrodark = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#000000" },
